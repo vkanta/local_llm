@@ -52,7 +52,7 @@
     },
     "jira": {
       "type": "local",
-      "command": ["bash", "-c", "JIRA_TOKEN=$(cat /home/vkanta/jira_token.txt) JIRA_USER_EMAIL=vasileios.kantartzis@aptiv.com JIRA_AUTH_TYPE=bearer JIRA_URL=https://jiraprod.aptiv.com exec /home/vkanta/wspaces/gouqi-mcp-server/target/release/jira-mcp-server"],
+      "command": ["bash", "-c", "JIRA_TOKEN=$(cat /home/vkanta/jira_token.txt) JIRA_USER_EMAIL=<your email> JIRA_AUTH_TYPE=bearer JIRA_URL=<your jira server> exec /home/vkanta/wspaces/gouqi-mcp-server/target/release/jira-mcp-server"],
       "enabled": true
     }
   }
