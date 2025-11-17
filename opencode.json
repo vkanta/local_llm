@@ -1,0 +1,59 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "qwen3:latest": {
+	  "name":"Qwen 3",
+          "tools": true
+        },
+        "qwen3-coder:30b": {
+	  "name":"Qwen 3 coder",
+          "tools": true
+        },
+        "deepseek-r1:8b": {
+	  "name":"Deepseek R1 8B",
+          "tools": true
+        },
+        "starcoder2:latest": {
+	  "name":"Starcoder2",
+          "tools": true
+        }
+
+      }
+    }
+  },
+  "mcp": {
+    "sequentialthinking": {
+      "type": "local",
+      "command":[ "npx",
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "enabled":true
+    },
+    "playwright": {
+      "type": "local",
+      "command":[ "npx",
+        "@playwright/mcp@latest"
+      ],
+      "enabled": true
+    },
+    "plantuml": {
+      "type": "local",
+      "command":[ "node",
+        "/home/vkanta/wspaces/plantUmlMcp/build/index.js"
+      ],
+      "enabled": true
+    },
+    "jira": {
+      "type": "local",
+      "command": ["bash", "-c", "JIRA_TOKEN=$(cat /home/vkanta/jira_token.txt) JIRA_USER_EMAIL=vasileios.kantartzis@aptiv.com JIRA_AUTH_TYPE=bearer JIRA_URL=https://jiraprod.aptiv.com exec /home/vkanta/wspaces/gouqi-mcp-server/target/release/jira-mcp-server"],
+      "enabled": true
+    }
+  }
+}
